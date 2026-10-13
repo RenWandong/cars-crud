@@ -12,7 +12,13 @@ import uvicorn
 
 from app.main import create_app
 
-
+def pytest_addoption(parser):
+    parser.addoption(
+        "--headed",
+        action="store_true",
+        default=False,
+        help="Run browser tests with a visible browser window.",
+    )
 
 
 @pytest.fixture
